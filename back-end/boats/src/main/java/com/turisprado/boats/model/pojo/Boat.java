@@ -1,4 +1,5 @@
-package com.turisprado.hotels.model.pojo;
+package com.turisprado.boats.model.pojo;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,27 +15,27 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "room")
+@Table(name = "boats")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString
-public class Room {
-
+public class Boat {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column(name = "codigo", length = 10)
-	private String codigo;
-	
+
 	@Column(name = "name", length = 250)
 	private String name;
 	
 	@Column(name = "description", length = 1000)
 	private String description;
+	
+	@Column(name = "image", length = 50)
+	private String image;	
 	
 	@Column(name = "price")
 	private Integer price;
@@ -45,7 +46,8 @@ public class Room {
 	@Column(name = "inventoryStatus", length = 20)
 	private String inventoryStatus;
 	
-	@Column(name = "idhotel")
-	private Integer idhotel;
-	
+	@Column(name = "rating")
+	private Integer rating;
 }
+
+

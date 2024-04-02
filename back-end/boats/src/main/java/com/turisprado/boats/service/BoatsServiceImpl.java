@@ -1,4 +1,4 @@
-package com.turisprado.hotels.service;
+package com.turisprado.boats.service;
 
 import java.util.List;
 
@@ -6,36 +6,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.turisprado.hotels.data.HotelsRepository;
-import com.turisprado.hotels.model.pojo.Hotel;
-import com.turisprado.hotels.model.request.CreateHotelRequest;
+import com.turisprado.boats.data.BoatsRepository;
+import com.turisprado.boats.model.pojo.Boat;
+import com.turisprado.boats.model.request.CreateBoatRequest;
 
 
 
 @Service
-public class HotelsServiceImpl implements HotelsService {
+public class BoatsServiceImpl implements BoatsService {
 
 	@Autowired
-	private HotelsRepository repository;
+	private BoatsRepository repository;
 	
 	@Override
-	public List<Hotel> getHotels() {
-		List<Hotel> hotels = repository.findAll();
+	public List<Boat> getBoats() {
+		List<Boat> hotels = repository.findAll();
 		return hotels.isEmpty() ? null : hotels;
 	}
 
 	@Override
-	public Hotel getHotel(String hotelId) {
-		return repository.findById(Long.valueOf(hotelId)).orElse(null);
+	public Boat getBoat(String boatId) {
+		return repository.findById(Long.valueOf(boatId)).orElse(null);
 	}
 
 	@Override
-	public Boolean removHotel(String hotelId) {
+	public Boolean removeBoat(String boatId) {
 		return null;
 	}
 
 	@Override
-	public Hotel createHotel(CreateHotelRequest request) {
+	public Boat createBoat(CreateBoatRequest request) {
 		if (request != null
 				&& StringUtils.hasLength(request.getName().trim())
 				&& StringUtils.hasLength(request.getDescription().trim())
@@ -45,7 +45,7 @@ public class HotelsServiceImpl implements HotelsService {
 				&& StringUtils.hasLength(request.getInventoryStatus().trim())							
 				&& request.getRating() != null){
 
-			Hotel hotel = Hotel.builder()
+			Boat boat = Boat.builder()
 					.name(request.getName())
 					.description(request.getDescription())
 					.image(request.getImage())
@@ -54,7 +54,7 @@ public class HotelsServiceImpl implements HotelsService {
 					.inventoryStatus(request.getInventoryStatus())
 					.rating(request.getRating()).build();
 
-			return repository.save(hotel);
+			return repository.save(boat);
 		} else {
 			return null;
 		}

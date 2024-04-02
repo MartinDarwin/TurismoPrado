@@ -1,4 +1,4 @@
-package com.turisprado.hotels.model.pojo;
+package com.turisprado.restaurants.model.pojo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,7 +14,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "image_hotel")
+@Table(name = "image_restaurant")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -30,6 +30,6 @@ public class Image {
 	@Column(name = "itemimagesrc", length = 30)
 	private String itemimagesrc;
 	
-	@Column(name = "idhotel")
-	private Integer idhotel;
+	@Column(name = "idrestaurant")
+	private Integer idrestaurant;
 }

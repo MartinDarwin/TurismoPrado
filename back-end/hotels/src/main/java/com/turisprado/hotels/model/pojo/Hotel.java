@@ -48,6 +48,7 @@ public class Hotel {
 	
 	@Column(name = "rating")
 	private Integer rating;
+
 }
 
 

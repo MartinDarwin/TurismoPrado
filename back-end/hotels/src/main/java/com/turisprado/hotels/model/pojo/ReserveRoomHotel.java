@@ -1,5 +1,7 @@
 package com.turisprado.hotels.model.pojo;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,22 +16,37 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "image_hotel")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString
-public class Image {
+public class ReserveRoomHotel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Integer id;
 
-	@Column(name = "itemimagesrc", length = 30)
-	private String itemimagesrc;
+	@Column(name = "name", length = 80)
+	private String name;
 	
-	@Column(name = "idhotel")
-	private Integer idhotel;
+	@Column(name = "lastname", length = 80)
+	private String lastname;
+	
+	@Column(name = "hotel", length = 250)
+	private String hotel;
+
+	@Column(name = "habitacion", length = 250)
+	private String habitacion;
+	
+	@Column(name = "dateini", length = 30)
+	private String dateini;
+	
+	@Column(name = "dateend", length = 30)
+	private String dateend;
+	
+	@Column(name = "idroom")
+	private Integer idroom;
+	
 }

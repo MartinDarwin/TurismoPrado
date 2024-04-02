@@ -1,4 +1,5 @@
-package com.turisprado.hotels.model.pojo;
+package com.turisprado.users.model.pojo;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,22 +15,39 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "image_hotel")
+@Table(name = "users")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString
-public class Image {
-
+public class User {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(name = "itemimagesrc", length = 30)
-	private String itemimagesrc;
+	@Column(name = "name", length = 80)
+	private String name;
 	
-	@Column(name = "idhotel")
-	private Integer idhotel;
+	@Column(name = "lastname", length = 80)
+	private String lastname;
+	
+	@Column(name = "phone", length = 20)
+	private String phone;
+
+	@Column(name = "email", length = 40)
+	private String email;
+	
+	@Column(name = "username", length = 20)
+	private String username;
+	
+	@Column(name = "password", length = 20)
+	private String password;
+	
+	@Column(name = "type", length = 20)
+	private String type;
 }
+
+

@@ -1,7 +1,7 @@
 ## Configuracion de Spring
 spring:
   application:
-    name: ms-hotels
+    name: ms-restaurants
   datasource:
     url: jdbc:postgresql://localhost:5432/represa_prado_db
     username: postgres
@@ -16,7 +16,7 @@ spring:
 
 ## Configuracion de Instancia 
 server:
-  port: 8088
+  port: 8087
 
 ## Configuracion del cliente de Eureka
 eureka:
